@@ -9,12 +9,9 @@ namespace BasicSecurityASP.Services
 
         public async Task<List<Beer>> GetBeers()
         {
-            using (StreamReader r = new StreamReader(path))
-            {
-                string json = await r.ReadToEndAsync();
-                List<Beer> beers = JsonSerializer.Deserialize<List<Beer>>(json);
-                return beers;
-            }
+            string content = await File.ReadAllTextAsync(path);
+            var beers = JsonSerializer.Deserialize<List<Beer>>(content);
+            return beers; 
         }
 
     }
