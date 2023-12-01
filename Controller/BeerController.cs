@@ -17,7 +17,8 @@ namespace BasicSecurityASP.Controller
         }
 
         [HttpGet]
-        public async Task<List<Beer>> GetBeers() => await _beerService.GetBeers();
+        public async Task<List<Beer>> GetBeers() => await _beerService.GetBeers();.
+        
 
     }
 }
